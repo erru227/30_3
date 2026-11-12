@@ -8,22 +8,21 @@ function getValue(text){
 function Page() {
     //Collect variables to change later
     const [input, setInput] = useState("");
-    const [h1, setPrinted] = useState("New Conditionals");
+    const [header, setPrinted] = useState("New Conditionals");
 
     function changeTitle(){
         setPrinted(input);
     }
 
-    //Return page
+    //Return page. Also handling event object as function parameter
     return (
         <div>
-            <h1>New Conditionals</h1>
-            <input/>
+            <h1>{header}</h1>
+            <input onChange={(event) => setInput(event.target.value)}/>
             <br/>
             <button onClick={changeTitle}>Change Title</button>
         </div>
     );
 }
- 
 
 root.render(<Page/>);
